@@ -1,0 +1,22 @@
+{
+  "name": "com.outsystems.blinkinput",
+  "version": "1.0.0",
+  "description": "This plugins uses BlinkInput from MicroBlink to recognize text from receipts, cheques, business cards, invoices, insurance cards, and many others.",
+  "cordova": {
+    "id": "com.outsystems.blinkinput",
+    "platforms": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OutSystemsExperts/Cordova-Plugin-MicroBlink-BlinkInput.git"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OutSystemsExperts/Cordova-Plugin-MicroBlink-BlinkInput/issues"
+  },
+  "homepage": "https://github.com/OutSystemsExperts/Cordova-Plugin-MicroBlink-BlinkInput#readme"
+}
