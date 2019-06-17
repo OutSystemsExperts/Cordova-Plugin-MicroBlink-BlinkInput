@@ -252,9 +252,9 @@ public class DetectorActivity extends Activity {
             @Override
             public void onClick(View v) {
                 // save image to gallery
-                String url = MediaStore.Images.Media.insertImage(DetectorActivity.this.getContentResolver(),
+                String uri = MediaStore.Images.Media.insertImage(DetectorActivity.this.getContentResolver(),
                         mShownBitmap, "Detected Image", "");
-                Log.i(DetectorActivity.this, "Image saved to URL {}", url);
+                Log.i(DetectorActivity.this, "Image saved to URI {}", uri);
 
                 // release Bitmap
                 mImageView.setImageResource(android.R.color.transparent);
@@ -265,8 +265,8 @@ public class DetectorActivity extends Activity {
 
                 //
                 Intent data = new Intent();
-                intent.putExtra("url", url);
-                setResult(RESULT_OK, intent);
+                data.putExtra("uri", uri);
+                setResult(RESULT_OK, data);
                 finish();
 
                 // resume scanning
@@ -591,5 +591,3 @@ public class DetectorActivity extends Activity {
     };
 
 }
-
-
