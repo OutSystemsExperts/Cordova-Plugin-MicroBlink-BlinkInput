@@ -1,0 +1,9 @@
+repositories {
+    maven { url 'https://maven.microblink.com' }
+}
+
+dependencies {
+    implementation('com.microblink:blinkinput:4.1.0@aar') {
+        transitive = true
+    }
+}
