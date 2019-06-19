@@ -3,7 +3,7 @@ const pluginName = 'BlinkInputPlugin';
 
 
 exports.init = function (success, error, license) {
-    exec(success, error, pluginName, 'init', [license]);
+    exec(success, error, pluginName, 'initSDK', [license]);
 };
 
 exports.check_supported_device = function (success, error) {

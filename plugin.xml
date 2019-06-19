@@ -3,33 +3,51 @@
     xmlns="http://apache.org/cordova/ns/plugins/1.0" 
     xmlns:android="http://schemas.android.com/apk/res/android">
     <name>.</name>
-    <js-module src="www/BlinkInput.js" name="BliBlinkInputnkId">
+    <js-module name="BliBlinkInputnkId" src="www/BlinkInput.js">
         <clobbers target="cordova.plugins.blinkInput" />
         <clobbers target="plugin.blinkInput" />
     </js-module>
-    
+
     <platform name="android">
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="BlinkInputPlugin">
                 <param name="android-package" value="com.outsystems.blinkinput.BlinkInputPlugin" />
             </feature>
         </config-file>
-
-        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <activity android:name="com.outsystems.blinkinput.DetectorActivity" />
         </config-file>
-
-        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
-        
+        <config-file parent="/*" target="AndroidManifest.xml" />
         <source-file src="src/android/BlinkInputPlugin.java" target-dir="src/com/outsystems/blinkinput" />
         <source-file src="src/android/DetectorActivity.java" target-dir="src/com/outsystems/blinkinput" />
-        
-        <!-- Layouts-->
-        <source-file src="src/android/res/layout/activity_detector.xml" target-dir="res/layout"/>
-        <source-file src="src/android/res/layout/activity_menu_list.xml" target-dir="res/layout"/>
-        <source-file src="src/android/res/layout/detector_camera_overlay.xml" target-dir="res/layout"/>
-        <source-file src="src/android/res/layout/detector_detection_result.xml" target-dir="res/layout"/>
-    
+        <source-file src="src/android/res/layout/activity_detector.xml" target-dir="res/layout" />
+        <source-file src="src/android/res/layout/activity_menu_list.xml" target-dir="res/layout" />
+        <source-file src="src/android/res/layout/detector_camera_overlay.xml" target-dir="res/layout" />
+        <source-file src="src/android/res/layout/detector_detection_result.xml" target-dir="res/layout" />
         <framework custom="true" src="src/android/blinkinput.gradle" type="gradleReference" />
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="BlinkInputPlugin">
+                <param name="ios-package" value="BlinkInputPlugin" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/BlinkInputPlugin.swift" />
+
+        <resource-file src="src/ios/Microblink.bundle" />
+
+        <framework src="src/ios/Microblink.framework" custom="true" embed="true" />
+
+        <framework src="AudioToolbox.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="CoreMedia.framework" />
+        <framework src="libc++.tbd" />
+        <framework src="libiconv.tbd" />
+        <framework src="libz.tbd" />
+
+        <hook type="after_plugin_install" src="hooks/embed_framework.js" />
+        <hook type="before_build" src="hooks/embed_framework.js" />
     </platform>
 </plugin>
