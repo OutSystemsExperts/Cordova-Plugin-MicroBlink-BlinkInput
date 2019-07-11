@@ -28,5 +28,5 @@ exports.landscapeScan = function (success, error) {
 
 
 exports.chequeOCR = function (success, error) {
-    exec(success, error, pluginName, 'cheque_ocr', []);
+    exec(success, error, pluginName, 'chequeOCR', []);
 };

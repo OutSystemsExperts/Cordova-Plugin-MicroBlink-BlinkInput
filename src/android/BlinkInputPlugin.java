@@ -38,7 +38,7 @@ public class BlinkInputPlugin extends CordovaPlugin {
     private static final String id = "id_scan";
     private static final String a4PaperPortrait = "a4_portrait";
     private static final String a4PaperLandscape = "a4_landscape";
-    private static final String chequeOCR = "cheque_ocr";
+    private static final String chequeOCR = "chequeOCR";
 
     private static final int CHEQUE_REQUEST_CODE = 1111;
     private static final int ID_REQUEST_CODE = 1112;
