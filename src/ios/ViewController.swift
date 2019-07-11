@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func startScanTapped() {
+    func startScanTapped(_ topVC: UIViewController) {
         
         // Create MBFieldByFieldOverlaySettings
         let settings = MBFieldByFieldOverlaySettings(scanElements: MBGenericPreset.getPreset()!)
@@ -24,8 +24,9 @@ class ViewController: UIViewController {
         // Create scanning VC
         let recognizerRunnerViewController: (UIViewController & MBRecognizerRunnerViewController)? = MBViewControllerFactory.recognizerRunnerViewController(withOverlayViewController: fieldByFieldVC)
         
+    
         // Present VC
-        self.present(recognizerRunnerViewController!, animated: true, completion: nil)
+        topVC.present(recognizerRunnerViewController!, animated: true, completion: nil)
     }
 }
 

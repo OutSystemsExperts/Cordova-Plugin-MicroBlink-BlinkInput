@@ -1,12 +1,18 @@
 import MicroBlink
 
-class BlinkInputPlugin: CDVPlugin {
+@objc(BlinkInputPlugin)
+@objcMembers
+class BlinkInputPlugin : CDVPlugin {
     
     private var scanViewController: ViewController?
 
     func initSDK(_ command:CDVInvokedUrlCommand) {
         let license:String = command.arguments[0] as? String ?? ""
-        MBMicroblinkSDK.init().setLicenseKey(license)
+        
+        DispatchQueue.main.async {
+            MBMicroblinkSDK.sharedInstance().setLicenseKey(license)
+        }
+        
         
         let pluginResult = CDVPluginResult(
             status: CDVCommandStatus_OK
@@ -19,9 +25,12 @@ class BlinkInputPlugin: CDVPlugin {
     }
     
     func chequeOCR(_ command:CDVInvokedUrlCommand) {
-        self.scanViewController = ViewController()
-     
-        scanViewController?.startScanTapped()
+        let scanViewController = ViewController()
+    
+        
+        DispatchQueue.main.async {
+            scanViewController.startScanTapped(self.viewController)
+        }
     }
     
 }
