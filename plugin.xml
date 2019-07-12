@@ -34,10 +34,13 @@
             </feature>
         </config-file>
 
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>This app requires camera access to be able to scan a cheque</string>
+        </config-file>
+
         <dependency id="cordova-plugin-add-swift-support" version="1.7.2" />
 
         <source-file src="src/ios/BlinkInputPlugin.swift" />
-        <source-file src="src/ios/ViewController.swift" />
         <source-file src="src/ios/MBGenericPreset.swift" />
         <framework src="PPBlinkOCR" type="podspec" spec="~> 4.1.0" />
     </platform>
