@@ -11,17 +11,39 @@ class BlinkInputPlugin : CDVPlugin {
         
         DispatchQueue.main.async {
             MBMicroblinkSDK.sharedInstance().setLicenseKey(license)
+            let pluginResult = CDVPluginResult(
+                status: CDVCommandStatus_OK
+            )
+            
+            self.commandDelegate!.send(
+                pluginResult,
+                callbackId: command.callbackId
+            )
         }
-        
-        
-        let pluginResult = CDVPluginResult(
-            status: CDVCommandStatus_OK
-        )
-        
-        self.commandDelegate!.send(
-            pluginResult,
-            callbackId: command.callbackId
-        )
+    }
+
+    func checkSupportedDevice(_ command:CDVInvokedUrlCommand) {
+        let error : NSErrorPointer = nil
+        //Unsupported false -> Is supported
+        if MBMicroblinkSDK.isScanningUnsupported(for: .back, error: error) == false {
+            let pluginResult = CDVPluginResult(
+                status: CDVCommandStatus_OK
+            )
+            
+            self.commandDelegate!.send(
+                pluginResult,
+                callbackId: command.callbackId
+            )
+        } else {
+            let pluginResult = CDVPluginResult(
+                status: CDVCommandStatus_ERROR
+            )
+            
+            self.commandDelegate!.send(
+                pluginResult,
+                callbackId: command.callbackId
+            )
+        }
     }
     
     func chequeOCR(_ command:CDVInvokedUrlCommand) {

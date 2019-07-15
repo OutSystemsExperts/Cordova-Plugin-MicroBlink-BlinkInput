@@ -33,7 +33,7 @@ import java.io.ByteArrayOutputStream;
 public class BlinkInputPlugin extends CordovaPlugin {
 
     private static final String init = "initSDK";
-    private static final String supported = "check_supported_device";
+    private static final String supported = "checkSupportedDevice";
     private static final String cheque = "cheque";
     private static final String id = "id_scan";
     private static final String a4PaperPortrait = "a4_portrait";

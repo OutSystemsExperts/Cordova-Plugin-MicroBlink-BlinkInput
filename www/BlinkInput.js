@@ -7,7 +7,7 @@ exports.init = function (success, error, license) {
 };
 
 exports.check_supported_device = function (success, error) {
-    exec(success, error, pluginName, 'check_supported_device', []);
+    exec(success, error, pluginName, 'checkSupportedDevice', []);
 };
 
 exports.chequeScan = function (success, error) {
