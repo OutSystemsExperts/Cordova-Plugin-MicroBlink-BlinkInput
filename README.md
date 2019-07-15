@@ -1,2 +1,3 @@
 # Cordova-Plugin-MicroBlink-BlinkInput
-MicroBlink BlinkInput Cordova plugin
+
+This plugin uses MicroBlink BlinkInput to scan the amount, pay to name and date from cheques 
