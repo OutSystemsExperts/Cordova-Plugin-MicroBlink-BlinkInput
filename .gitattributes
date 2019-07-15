@@ -1,0 +1,5 @@
+src/ios/Microblink.framework/Info.plist filter=lfs diff=lfs merge=lfs -text
+src/ios/Microblink.framework/Microblink filter=lfs diff=lfs merge=lfs -text
+src/ios/Microblink.framework/Modules filter=lfs diff=lfs merge=lfs -text
+src/ios/Microblink.framework/_CodeSignature filter=lfs diff=lfs merge=lfs -text
+src/ios/Microblink.framework/Headers filter=lfs diff=lfs merge=lfs -text

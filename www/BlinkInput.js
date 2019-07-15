@@ -3,11 +3,11 @@ const pluginName = 'BlinkInputPlugin';
 
 
 exports.init = function (success, error, license) {
-    exec(success, error, pluginName, 'init', [license]);
+    exec(success, error, pluginName, 'initSDK', [license]);
 };
 
 exports.check_supported_device = function (success, error) {
-    exec(success, error, pluginName, 'check_supported_device', []);
+    exec(success, error, pluginName, 'checkSupportedDevice', []);
 };
 
 exports.chequeScan = function (success, error) {
@@ -28,5 +28,5 @@ exports.landscapeScan = function (success, error) {
 
 
 exports.chequeOCR = function (success, error) {
-    exec(success, error, pluginName, 'cheque_ocr', []);
+    exec(success, error, pluginName, 'chequeOCR', []);
 };
